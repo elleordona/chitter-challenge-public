@@ -1,5 +1,17 @@
 # Chitter Challenge by Elle Ordoña
 
+## Technologies Used
+
+---
+
+## How to Run
+
+---
+
+## Acceptance Criteria
+
+---
+
 ## Part 1
 
 ### User Story 1
@@ -10,9 +22,22 @@ So that I can let people know what I am doing
 I want to post a message (peep) to chitter
 ```
 
-### Domain Model 1
-
 ### Initial Thoughts 1
+
+- Use a database to store the peeps posted
+- POST request to a database
+- Back-end
+- Create a database in MongoDB
+
+### Components 1
+
+Chitter Database
+
+- Peeps
+  - username
+  - message (character limit?)
+
+### Domain Model 1
 
 ### Tests 1
 
@@ -28,9 +53,25 @@ So that I can see what others are saying
 I want to see all peeps in reverse chronological order
 ```
 
-### Domain Model 2
-
 ### Initial Thoughts 2
+
+- You don't have to be logged in to see peeps
+- Create a Date object when a peep is posted
+- Front-end
+- Reverse chronological: newest first
+- Want the home page to look like this (Search Bar and Trends optional)
+  ![twitter mock-up](images/twitter-homepage-mockup.jpeg)
+
+### Components 2
+
+- Homepage
+  - Navbar
+  - Login/Register
+  - Logo
+  - Compose Peep
+  - Feed
+
+### Domain Model 2
 
 ### Tests 2
 
@@ -46,9 +87,11 @@ So that I can better appreciate the context of a peep
 I want to see the time at which it was made
 ```
 
-### Domain Model 3
-
 ### Initial Thoughts 3
+
+- Use the date object to include the time stamp of when the peep was posted
+
+### Domain Model 3
 
 ### Tests 3
 
@@ -64,9 +107,13 @@ So that I can post messages on Chitter as me
 I want to sign up for Chitter
 ```
 
-### Domain Model 4
-
 ### Initial Thoughts 4
+
+- Trainee SEs sign up with their email, password, name and a username (e.g ewright@digitalfutures.com, password123, Ed Wright, edwright6789)
+- Usernames and emails are unique
+- Use a database to store all the registered users
+
+### Domain Model 4
 
 ### Tests 4
 
@@ -82,9 +129,12 @@ So that only I can post messages on Chitter as me
 I want to log in to Chitter
 ```
 
-### Domain Model 5
-
 ### Initial Thoughts 5
+
+- Login requires the user to have been registered
+- Access to the database to make sure the user is registered
+
+### Domain Model 5
 
 ### Tests 5
 
@@ -104,11 +154,14 @@ I want to log out of Chitter
 
 ### Initial Thoughts 6
 
+- Log out button will replace the Log in/Register button in the header when a user is logged in
+- Look back at ed's log in example
+
 ### Tests 6
 
 ---
 
-## Extended
+## Extended Criteria
 
 ---
 
