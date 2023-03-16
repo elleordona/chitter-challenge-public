@@ -10,6 +10,7 @@ import { config } from 'dotenv';
 config({ path: `.env.${process.env.NODE_ENV}` });
 
 // route imports
+import { allPeeps } from './routes/allPeeps.route.js';
 
 // server setup
 const port = process.env.PORT;
@@ -27,7 +28,7 @@ main().catch((err) => console.log(err));
 
 app.use(express.json());
 app.use(cors());
-// app.use(`/`, allPeeps); //! import allPeeps route
+app.use(`/`, allPeeps);
 // app.use(`/compose`, addPeep); //! import addPeep route
 
 const server = app.listen(port, host, () => {

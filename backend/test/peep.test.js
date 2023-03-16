@@ -1,7 +1,7 @@
 // testing the server functions
 
 // imports
-// import the Peep model when created
+import Peep from '../src/models/peep.model.js';
 
 import chai from 'chai';
 import { expect } from 'chai';
@@ -20,7 +20,7 @@ describe('Testing requests on the database', () => {
 	// before each test the database will be cleared and new test data will be inserted
 	beforeEach(async () => {
 		try {
-			await Peep.deleteMany(); //! see imports
+			await Peep.deleteMany();
 			console.log(`Database cleared`);
 		} catch (error) {
 			console.log(`Error Occurred while clearing database`);
