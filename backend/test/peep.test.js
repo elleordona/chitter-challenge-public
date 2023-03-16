@@ -7,15 +7,15 @@ import chai from 'chai';
 import { expect } from 'chai';
 import chaiHttp from 'chai-http';
 
-// import server.js when created
-import testData from '../tests/testData/samplePeeps.js';
+import server from '../src/server.js';
+import testData from './testData/samplePeeps.js';
 const testDataArray = testData.data;
 
 chai.use(chaiHttp);
 
 describe('Testing requests on the database', () => {
 	// create server and keep it open so we can make requests during the testing
-	const testServer = chai.request(server).keepOpen(); //! see imports
+	const testServer = chai.request(server).keepOpen();
 
 	// before each test the database will be cleared and new test data will be inserted
 	beforeEach(async () => {
@@ -55,7 +55,7 @@ describe('Testing requests on the database', () => {
 				date: `2019-05-27T00:00:00.000Z`,
 			};
 
-			const res = await testServer.post(`/`).send(peep);
+			const res = await testServer.post(`/compose`).send(peep);
 
 			expect(res).to.have.status(422);
 			expect(res).to.have.property(`error`);
@@ -69,7 +69,7 @@ describe('Testing requests on the database', () => {
 				peepBody: `testMessage`,
 			};
 
-			const res = await testServer.post(`/`).send(peep);
+			const res = await testServer.post(`/compose`).send(peep);
 
 			expect(res).to.have.status(422);
 			expect(res).to.have.property(`error`);
@@ -84,7 +84,7 @@ describe('Testing requests on the database', () => {
 				date: `March 15th 2023`,
 			};
 
-			const res = await testServer.post(`/`).send(peep);
+			const res = await testServer.post(`/compose`).send(peep);
 
 			expect(res).to.have.status(422);
 			expect(res).to.have.property(`error`);
@@ -99,7 +99,7 @@ describe('Testing requests on the database', () => {
 				date: `2023-03-16T16:03:58Z`,
 			};
 
-			const res = await testServer.post(`/`).send(peep);
+			const res = await testServer.post(`/compose`).send(peep);
 
 			expect(res).to.have.status(201);
 			expect(res).to.have.property(`object`);

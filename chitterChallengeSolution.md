@@ -47,6 +47,7 @@ I want to post a message (peep) to chitter
 #### Routes
 
 - `/` (index)
+- `/compose`
 
 #### Services
 
