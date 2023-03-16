@@ -2,6 +2,11 @@
 
 ## Technologies Used
 
+- MongoDB
+- Express.js
+- React.js
+- Node.js
+
 ---
 
 ## How to Run
@@ -24,22 +29,37 @@ I want to post a message (peep) to chitter
 
 ### Initial Thoughts 1
 
+- Create a database in MongoDB
 - Use a database to store the peeps posted
 - POST request to a database
-- Back-end
-- Create a database in MongoDB
+- Create simple static chitter page that displays the peep in the database
 
 ### Components 1
 
-Chitter Database
+#### Database/Model/Validation
 
 - Peeps
+  - peepId (auto generated) [`required`]
   - username
-  - message (character limit?)
+  - message (character limit?) [`required`]
+  - date (auto generated) [`required`]
 
-### Domain Model 1
+#### Routes
 
-### Tests 1
+- `/` (index)
+
+#### Services
+
+- composePeep
+- getAllPeeps
+
+### Testing 1
+
+**Test 1** - testing /GET => get all peeps
+
+**Test 2** - testing /POST => peep must have a message
+
+**Test 3** - testing /POST => peep is properly formed
 
 ---
 
@@ -61,6 +81,7 @@ I want to see all peeps in reverse chronological order
 - Reverse chronological: newest first
 - Want the home page to look like this (Search Bar and Trends optional)
   ![twitter mock-up](images/twitter-homepage-mockup.jpeg)
+- Use CSS to add design to the page
 
 ### Components 2
 
