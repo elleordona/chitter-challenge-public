@@ -39,9 +39,9 @@ I want to post a message (peep) to chitter
 #### Database/Model/Validation
 
 - Peeps
-  - peepId (auto generated) [`required`]
+  - peepId (auto generated)
   - username
-  - message (character limit?) [`required`]
+  - peepBody (character limit?) [`required`]
   - date (auto generated) [`required`]
 
 #### Routes
@@ -57,9 +57,13 @@ I want to post a message (peep) to chitter
 
 **Test 1** - testing /GET => get all peeps
 
-**Test 2** - testing /POST => peep must have a message
+**Test 2** - testing /POST => peep must have a peepBody field
 
-**Test 3** - testing /POST => peep is properly formed
+**Test 3** - testing /POST => peep must have a date field
+
+**Test 4** - testing /POST => peep must have a valid date
+
+**Test 5** - testing /POST => peep is created when properly formed
 
 ---
 
