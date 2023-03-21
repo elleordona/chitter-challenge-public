@@ -56,10 +56,10 @@ describe('Testing requests on the database', () => {
 				date: '2019-05-27T00:00:00.000Z',
 			};
 
-			const res = await testServer.post(`/compose`).send(peep);
+			const res = await testServer.post(`/add`).send(peep);
 
 			expect(res).to.have.status(201);
-			expect(res).to.have.property(`object`);
+			expect(res.body).to.have.an(`object`);
 			expect(res.body.peep).to.have.property(`peepBody`, peep.peepBody);
 		});
 

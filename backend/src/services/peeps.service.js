@@ -10,3 +10,12 @@ export const getAllPeepsService = async () => {
 		throw e;
 	}
 };
+
+export const addPeepService = async (peep) => {
+	try {
+		const newPeep = new Peep(peep);
+		return await newPeep.save();
+	} catch (e) {
+		throw e;
+	}
+};
