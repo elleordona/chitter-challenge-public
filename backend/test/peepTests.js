@@ -92,18 +92,18 @@ describe('Testing requests on the database', () => {
 		});
 
 		//* Test 5
-		xit('should not create a peep without a valid date field', async () => {
+		it('should not create a peep without a valid date field', async () => {
 			let peep = {
 				username: `testUser`,
 				peepBody: `testMessage`,
 				date: `March 15th 2023`,
 			};
 
-			const res = await testServer.post(`/compose`).send(peep);
+			const res = await testServer.post(`/add`).send(peep);
 
 			expect(res).to.have.status(422);
 			expect(res).to.have.property(`error`);
-			expect(res.text).to.be.eql(`Posting new Peep Failed`);
+			expect(res.text).to.be.eql(`Posting new Peep failed`);
 		});
 	});
 });
