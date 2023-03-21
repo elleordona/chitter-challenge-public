@@ -2,10 +2,17 @@
 
 ## Technologies Used
 
-- MongoDB
-- Express.js
-- React.js
-- Node.js
+- MongoDB (database)
+- express (web framework)
+- express-validator (middleware)
+- mongoose (object modelling)
+- cors (middleware)
+- dotenv (environment variables)
+- mocha/chai/chai-http (backend testing)
+- React.js (user interface)
+- CDBReact (user interface styling)
+- react-router-dom (react app routing)
+- axios/jest (frontend testing)
 
 ---
 
@@ -44,14 +51,14 @@ I want to post a message (peep) to chitter
   - peepBody (character limit?) [`required`]
   - date (auto generated) [`required`]
 
-#### Routes
+#### Routes 1
 
 - `/` (index)
-- `/compose`
+- `/add`
 
-#### Services
+#### Services 1
 
-- composePeep
+- addPeep
 - getAllPeeps
 
 ### Testing 1
@@ -86,20 +93,21 @@ I want to see all peeps in reverse chronological order
 - Reverse chronological: newest first
 - Want the home page to look like this (Search Bar and Trends optional)
   ![twitter mock-up](images/twitter-homepage-mockup.jpeg)
-- Use CSS to add design to the page
+- Use CSS/bootstrap to add design to the page
 
 ### Components 2
 
 - Homepage
-  - Navbar
-  - Login/Register
-  - Logo
-  - Compose Peep
+  - Navbar (Logo, Home Link, Compose Peep Link, Login/Register Link)
   - Feed
 
-### Domain Model 2
-
 ### Tests 2
+
+**Test 6** - Sidebar matches snapshot
+
+**Test 7** - Should render "Peeps Loading" on initial render
+
+**Test 8** - Should render "No Peeps" if empty array returned from server
 
 ---
 
