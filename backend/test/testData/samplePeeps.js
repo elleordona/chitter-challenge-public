@@ -1,5 +1,5 @@
 const testData = {
-	data: [
+	peeps: [
 		{
 			_id: '5ca7177e0774a968c209a926',
 			username: 'peepUser1',
