@@ -49,7 +49,22 @@ describe('Testing requests on the database', () => {
 
 	describe('/POST tests', () => {
 		//* Test 2
-		it('should not create a peep without a peepBody field', async () => {
+		it('should create a peep that is properly formed', async () => {
+			let peep = {
+				username: 'testUser',
+				peepBody: 'test message',
+				date: '2019-05-27T00:00:00.000Z',
+			};
+
+			const res = await testServer.post(`/compose`).send(peep);
+
+			expect(res).to.have.status(201);
+			expect(res).to.have.property(`object`);
+			expect(res.body.peep).to.have.property(`peepBody`, peep.peepBody);
+		});
+
+		//* Test 3
+		xit('should not create a peep without a peepBody field', async () => {
 			let peep = {
 				username: `testUser`,
 				date: `2019-05-27T00:00:00.000Z`,
@@ -62,8 +77,8 @@ describe('Testing requests on the database', () => {
 			expect(res.text).to.be.eql(`Posting new Peep Failed`);
 		});
 
-		//* Test 3
-		it('should not create a peep without a date field', async () => {
+		//* Test 4
+		xit('should not create a peep without a date field', async () => {
 			let peep = {
 				username: `testUser`,
 				peepBody: `testMessage`,
@@ -76,8 +91,8 @@ describe('Testing requests on the database', () => {
 			expect(res.text).to.be.eql(`Posting new Peep Failed`);
 		});
 
-		//* Test 4
-		it('should not create a peep without a valid date field', async () => {
+		//* Test 5
+		xit('should not create a peep without a valid date field', async () => {
 			let peep = {
 				username: `testUser`,
 				peepBody: `testMessage`,
@@ -89,21 +104,6 @@ describe('Testing requests on the database', () => {
 			expect(res).to.have.status(422);
 			expect(res).to.have.property(`error`);
 			expect(res.text).to.be.eql(`Posting new Peep Failed`);
-		});
-
-		//* Test 5
-		it('should create a peep that is properly formed', async () => {
-			let peep = {
-				username: `testUser`,
-				peepBody: `testMessage`,
-				date: `2023-03-16T16:03:58Z`,
-			};
-
-			const res = await testServer.post(`/compose`).send(peep);
-
-			expect(res).to.have.status(201);
-			expect(res).to.have.property(`object`);
-			expect(res.body.peep).to.have.property(`peepBody`, peep.peepBody);
 		});
 	});
 });

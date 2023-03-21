@@ -58,13 +58,13 @@ I want to post a message (peep) to chitter
 
 **Test 1** - testing /GET => get all peeps
 
-**Test 2** - testing /POST => peep must have a peepBody field
+**Test 2** - testing /POST => peep is created when properly formed
 
-**Test 3** - testing /POST => peep must have a date field
+**Test 3** - testing /POST => peep must have a peepBody field
 
-**Test 4** - testing /POST => peep must have a valid date
+**Test 4** - testing /POST => peep must have a date field
 
-**Test 5** - testing /POST => peep is created when properly formed
+**Test 5** - testing /POST => peep must have a valid date
 
 ---
 
