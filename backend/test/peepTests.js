@@ -64,17 +64,17 @@ describe('Testing requests on the database', () => {
 		});
 
 		//* Test 3
-		xit('should not create a peep without a peepBody field', async () => {
+		it('should not create a peep without a peepBody field', async () => {
 			let peep = {
 				username: `testUser`,
 				date: `2019-05-27T00:00:00.000Z`,
 			};
 
-			const res = await testServer.post(`/compose`).send(peep);
+			const res = await testServer.post(`/add`).send(peep);
 
 			expect(res).to.have.status(422);
 			expect(res).to.have.property(`error`);
-			expect(res.text).to.be.eql(`Posting new Peep Failed`);
+			expect(res.text).to.be.eql(`Posting new Peep failed`);
 		});
 
 		//* Test 4
