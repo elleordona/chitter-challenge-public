@@ -98,7 +98,7 @@ I want to see all peeps in reverse chronological order
 ### Components 2
 
 - Homepage
-  - Navbar (Logo, Home Link, Compose Peep Link, Login/Register Link)
+  - Navbar (Logo, Home Link, Compose Peep Link, Profile Link, Login/Register Link)
   - Feed
 
 ### Tests 2

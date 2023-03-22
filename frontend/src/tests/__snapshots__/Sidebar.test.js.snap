@@ -1,0 +1,410 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar Tests should match snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        style="display: flex; height: 100vh; overflow: scroll initial;"
+      >
+        <div
+          class="sc-jMAIzZ lpafZt pro-sidebar"
+        >
+          <div
+            class="sc-dQelHR gJWERZ"
+          >
+            <div
+              class="sc-bCDidY dIJqkq"
+            >
+              <div
+                class="sc-BKAtq jhiSXh"
+              >
+                <div
+                  class="head-div"
+                >
+                  <span
+                    class="head-text"
+                  >
+                    <a
+                      class="text-decoration-none"
+                      href="/"
+                    >
+                      Chitter
+                    </a>
+                  </span>
+                  <span
+                    class="icon-suffix"
+                  >
+                    <i
+                      class="fa fa-bars fa-large"
+                    />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="sc-cPlDXj dcRZbf pro-sidebar-content sidebar-content"
+              >
+                <nav
+                  class="sc-kiLEMZ hHkbFj pro-menu"
+                >
+                  <ul
+                    class="sc-hVkBjg huakcS"
+                  >
+                    <a
+                      activeclassname="activeClicked"
+                      aria-current="page"
+                      class="active"
+                      firstchild="1"
+                      href="/"
+                      popperarrow="0"
+                    >
+                      <li
+                        class="sc-gUrTyy cxtNLP"
+                      >
+                        <div
+                          class="sc-jhSXcr dOUXmk"
+                          role="button"
+                          tabindex="0"
+                        >
+                          <i
+                            class="sc-ieZDjg kmhCmS fa fa-home fa-md side-icon"
+                            data-test="fa"
+                          />
+                          <span
+                            class="item-content"
+                          >
+                            Home
+                          </span>
+                        </div>
+                      </li>
+                    </a>
+                    <a
+                      activeclassname="activeClicked"
+                      class=""
+                      firstchild="1"
+                      href="/add"
+                      popperarrow="0"
+                    >
+                      <li
+                        class="sc-gUrTyy cxtNLP"
+                      >
+                        <div
+                          class="sc-jhSXcr dOUXmk"
+                          role="button"
+                          tabindex="0"
+                        >
+                          <i
+                            class="sc-ieZDjg kmhCmS fa fa-pen fa-md side-icon"
+                            data-test="fa"
+                          />
+                          <span
+                            class="item-content"
+                          >
+                            Compose Peep
+                          </span>
+                        </div>
+                      </li>
+                    </a>
+                    <a
+                      activeclassname="activeClicked"
+                      class=""
+                      firstchild="1"
+                      href="/profile"
+                      popperarrow="0"
+                    >
+                      <li
+                        class="sc-gUrTyy cxtNLP"
+                      >
+                        <div
+                          class="sc-jhSXcr dOUXmk"
+                          role="button"
+                          tabindex="0"
+                        >
+                          <i
+                            class="sc-ieZDjg kmhCmS fa fa-user fa-md side-icon"
+                            data-test="fa"
+                          />
+                          <span
+                            class="item-content"
+                          >
+                            Profile
+                          </span>
+                        </div>
+                      </li>
+                    </a>
+                    <a
+                      activeclassname="activeClicked"
+                      class=""
+                      firstchild="1"
+                      href="/login"
+                      popperarrow="0"
+                    >
+                      <li
+                        class="sc-gUrTyy cxtNLP"
+                      >
+                        <div
+                          class="sc-jhSXcr dOUXmk"
+                          role="button"
+                          tabindex="0"
+                        >
+                          <i
+                            class="sc-ieZDjg kmhCmS fa fa-book fa-md side-icon"
+                            data-test="fa"
+                          />
+                          <span
+                            class="item-content"
+                          >
+                            Login/Register
+                          </span>
+                        </div>
+                      </li>
+                    </a>
+                  </ul>
+                </nav>
+              </div>
+              <div
+                class="pro-sidebar-footer"
+                style="text-align: center;"
+              >
+                <div
+                  class="sidebar-btn-wrapper"
+                  style="padding: 20px 5px;"
+                >
+                  Digital Futures Academy
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      style="display: flex; height: 100vh; overflow: scroll initial;"
+    >
+      <div
+        class="sc-jMAIzZ lpafZt pro-sidebar"
+      >
+        <div
+          class="sc-dQelHR gJWERZ"
+        >
+          <div
+            class="sc-bCDidY dIJqkq"
+          >
+            <div
+              class="sc-BKAtq jhiSXh"
+            >
+              <div
+                class="head-div"
+              >
+                <span
+                  class="head-text"
+                >
+                  <a
+                    class="text-decoration-none"
+                    href="/"
+                  >
+                    Chitter
+                  </a>
+                </span>
+                <span
+                  class="icon-suffix"
+                >
+                  <i
+                    class="fa fa-bars fa-large"
+                  />
+                </span>
+              </div>
+            </div>
+            <div
+              class="sc-cPlDXj dcRZbf pro-sidebar-content sidebar-content"
+            >
+              <nav
+                class="sc-kiLEMZ hHkbFj pro-menu"
+              >
+                <ul
+                  class="sc-hVkBjg huakcS"
+                >
+                  <a
+                    activeclassname="activeClicked"
+                    aria-current="page"
+                    class="active"
+                    firstchild="1"
+                    href="/"
+                    popperarrow="0"
+                  >
+                    <li
+                      class="sc-gUrTyy cxtNLP"
+                    >
+                      <div
+                        class="sc-jhSXcr dOUXmk"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <i
+                          class="sc-ieZDjg kmhCmS fa fa-home fa-md side-icon"
+                          data-test="fa"
+                        />
+                        <span
+                          class="item-content"
+                        >
+                          Home
+                        </span>
+                      </div>
+                    </li>
+                  </a>
+                  <a
+                    activeclassname="activeClicked"
+                    class=""
+                    firstchild="1"
+                    href="/add"
+                    popperarrow="0"
+                  >
+                    <li
+                      class="sc-gUrTyy cxtNLP"
+                    >
+                      <div
+                        class="sc-jhSXcr dOUXmk"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <i
+                          class="sc-ieZDjg kmhCmS fa fa-pen fa-md side-icon"
+                          data-test="fa"
+                        />
+                        <span
+                          class="item-content"
+                        >
+                          Compose Peep
+                        </span>
+                      </div>
+                    </li>
+                  </a>
+                  <a
+                    activeclassname="activeClicked"
+                    class=""
+                    firstchild="1"
+                    href="/profile"
+                    popperarrow="0"
+                  >
+                    <li
+                      class="sc-gUrTyy cxtNLP"
+                    >
+                      <div
+                        class="sc-jhSXcr dOUXmk"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <i
+                          class="sc-ieZDjg kmhCmS fa fa-user fa-md side-icon"
+                          data-test="fa"
+                        />
+                        <span
+                          class="item-content"
+                        >
+                          Profile
+                        </span>
+                      </div>
+                    </li>
+                  </a>
+                  <a
+                    activeclassname="activeClicked"
+                    class=""
+                    firstchild="1"
+                    href="/login"
+                    popperarrow="0"
+                  >
+                    <li
+                      class="sc-gUrTyy cxtNLP"
+                    >
+                      <div
+                        class="sc-jhSXcr dOUXmk"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <i
+                          class="sc-ieZDjg kmhCmS fa fa-book fa-md side-icon"
+                          data-test="fa"
+                        />
+                        <span
+                          class="item-content"
+                        >
+                          Login/Register
+                        </span>
+                      </div>
+                    </li>
+                  </a>
+                </ul>
+              </nav>
+            </div>
+            <div
+              class="pro-sidebar-footer"
+              style="text-align: center;"
+            >
+              <div
+                class="sidebar-btn-wrapper"
+                style="padding: 20px 5px;"
+              >
+                Digital Futures Academy
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
