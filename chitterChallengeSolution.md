@@ -116,7 +116,7 @@ I want to see all peeps in reverse chronological order
 
 **Test 11** - an unsuccessful request returns the error object
 
-**Test 12** - getPeepData makes a call to getPeepDataAsync when useEffect is called
+**Test 12** - an empty request returns an error message
 
 **Test 13** - should render the returned peeps in a list
 

@@ -32,5 +32,25 @@ describe('External Data Tests', () => {
 				expect(functionResult).toStrictEqual(expectedReturn);
 			});
 		});
+
+		describe('Error returned', () => {
+			//* Test 11
+			test('should return error message when error is return from server', async () => {
+				const message = `Data not available from the server:${testError.message}`;
+				const expectedReturn = {
+					peeps: [],
+					status: 400,
+					error: {
+						type: `get`,
+						message,
+					},
+				};
+
+				axiosMock.get.mockRejectedValueOnce({ response: { status: 400, message: `Test Error` } });
+				functionResult = await api.getPeeps();
+
+				expect(functionResult).toStrictEqual(expectedReturn);
+			});
+		});
 	});
 });
