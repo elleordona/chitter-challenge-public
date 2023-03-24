@@ -7,7 +7,7 @@ import { MemoryRouter } from 'react-router-dom';
 import App from '../App';
 import * as api from '../asyncFunctions/peepAPICalls';
 
-import samplePeeps from '../samplePeeps.json';
+// import samplePeeps from '../samplePeeps.json';
 
 jest.mock('../asyncFunctions/peepAPICalls');
 
@@ -18,7 +18,7 @@ describe('App tests', () => {
 		const expectedReturn = { peeps: [], status: 204, error: { type: `get`, message: `Deliberate Get Error` } };
 
 		//* Test 13
-		test('should render "Peeps are loading..." on initial render ', async () => {
+		test('should render "Peeps are loading..." on initial render', async () => {
 			// Arrange
 			api.getPeeps.mockImplementation(() => {});
 			render(
