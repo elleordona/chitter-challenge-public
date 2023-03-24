@@ -26,6 +26,11 @@ describe('External Data Tests', () => {
 				expect(axiosMock.get).toHaveBeenCalledTimes(1);
 				expect(axiosMock.get).toHaveBeenCalledWith(process.env.REACT_APP_CHITTERURL);
 			});
+
+			//* Test 10
+			test('should return sample peeps when valid data is returned from server', () => {
+				expect(functionResult).toStrictEqual(expectedReturn);
+			});
 		});
 	});
 });
