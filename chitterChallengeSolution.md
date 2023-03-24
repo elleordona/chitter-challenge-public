@@ -118,7 +118,7 @@ I want to see all peeps in reverse chronological order
 
 **Test 12** - an empty request returns an error message
 
-**Test 13** - should render the returned peeps in a list
+**Test 13** - should render "Peeps are loading" on initial render
 
 **Test 14** - should render "no data" message when an error is returned
 
