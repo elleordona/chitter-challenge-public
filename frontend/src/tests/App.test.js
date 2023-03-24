@@ -19,13 +19,34 @@ describe('App tests', () => {
 
 		//* Test 13
 		test('should render "Peeps are loading..." on initial render ', async () => {
+			// Arrange
 			api.getPeeps.mockImplementation(() => {});
 			render(
 				<MemoryRouter>
 					<App />
 				</MemoryRouter>
 			);
+
+			// Act
+			// Assert
 			expect(await screen.findByText(/peeps are loading/i)).toBeInTheDocument();
+		});
+
+		//* Test 14
+		test('should render "No Peeps" message if empty array returned from server', async () => {
+			// Arrange
+			api.getPeeps.mockImplementation(() => expectedReturn);
+			render(
+				<MemoryRouter>
+					<App />
+				</MemoryRouter>
+			);
+
+			// Act
+			const getErrorRender = await screen.findAllByText(`There was a problem getting the Peeps: ${expectedReturn.error.message}`);
+
+			// Assert
+			expect(getErrorRender.length).toBeGreaterThan(0);
 		});
 	});
 });
