@@ -16,5 +16,15 @@ describe('Feed tests', () => {
 			// Assert
 			expect(screen.getByText(/peeps are loading.../i)).toBeInTheDocument();
 		});
+
+		//* Test 8
+		it('should display list of peeps when data contains peep objects', () => {
+			// Arrange
+			render(<Feed allPeeps={testData} />);
+			const peepList = screen.getAllByRole(`listitem`);
+			// Act
+			// Assert
+			expect(peepList.length).toBe(testData.peeps.length);
+		});
 	});
 });
