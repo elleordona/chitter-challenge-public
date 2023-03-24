@@ -52,5 +52,24 @@ describe('External Data Tests', () => {
 				expect(functionResult).toStrictEqual(expectedReturn);
 			});
 		});
+
+		describe('Empty array returned', () => {
+			//* Test 12
+			test('should return an empty array and no peeps error message when an empty array is returned from server', async () => {
+				const returnedError = {
+					peeps: [],
+					status: 204,
+					error: {
+						type: `get`,
+						message: `Data not available from the server: There are no peeps to retrieve, please add one`,
+					},
+				};
+
+				axiosMock.get.mockResolvedValueOnce({ data: [], status: 204 });
+				functionResult = await api.getPeeps();
+
+				expect(functionResult).toStrictEqual(returnedError);
+			});
+		});
 	});
 });
