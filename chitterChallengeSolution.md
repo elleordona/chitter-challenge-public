@@ -11,6 +11,7 @@
 - mocha/chai/chai-http (backend testing)
 - React.js (user interface)
 - CDBReact (user interface styling)
+- bootstrap (user interface styling)
 - react-router-dom (react app routing)
 - axios/jest (frontend testing)
 
