@@ -11,7 +11,7 @@ describe('Feed tests', () => {
 		it('should display "Peeps are loading..." when data length is 0', () => {
 			// Arrange
 			// Act
-			render(<Feed allPeeps={{ peeps: [] }} />);
+			render(<Feed data={{ peeps: [], error: `` }} />);
 			// render Feed with no data
 			// Assert
 			expect(screen.getByText(/peeps are loading.../i)).toBeInTheDocument();
@@ -20,11 +20,11 @@ describe('Feed tests', () => {
 		//* Test 8
 		it('should display list of peeps when data contains peep objects', () => {
 			// Arrange
-			render(<Feed allPeeps={testData} />);
+			render(<Feed data={{ peeps: testData, error: `` }} />);
 			const peepList = screen.getAllByRole(`listitem`);
 			// Act
 			// Assert
-			expect(peepList.length).toBe(testData.peeps.length);
+			expect(peepList.length).toBe(testData.length);
 		});
 	});
 });

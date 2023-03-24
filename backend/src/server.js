@@ -27,8 +27,8 @@ const main = async () => {
 // catch any errors when connecting to database
 main().catch((err) => console.log(err));
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 app.use(`/`, allPeeps);
 app.use(`/add`, addPeep);
 

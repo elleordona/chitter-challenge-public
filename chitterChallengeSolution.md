@@ -110,7 +110,7 @@ I want to see all peeps in reverse chronological order
 
 **Test 8** - Should render "No Peeps" if empty array returned from server
 
-**Test 9** - getPeepDataAsync makes the external data call
+**Test 9** - getPeeps makes the external data call
 
 **Test 10** - a successful request returns the right data
 
