@@ -110,6 +110,18 @@ I want to see all peeps in reverse chronological order
 
 **Test 8** - Should render "No Peeps" if empty array returned from server
 
+**Test 9** - getPeepDataAsync makes the external data call
+
+**Test 10** - a successful request returns the right data
+
+**Test 11** - an unsuccessful request returns the error object
+
+**Test 12** - getPeepData makes a call to getPeepDataAsync when useEffect is called
+
+**Test 13** - should render the returned peeps in a list
+
+**Test 14** - should render "no data" message when an error is returned
+
 ---
 
 ## Part 3
