@@ -137,10 +137,11 @@ I want to see the time at which it was made
 ### Initial Thoughts 3
 
 - Use the date object to include the time stamp of when the peep was posted
-
-### Domain Model 3
+- include the date when rendering the peep
 
 ### Tests 3
+
+**Test 15** - the Date is rendered when the Feed is rendered
 
 ---
 
