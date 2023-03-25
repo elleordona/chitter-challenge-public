@@ -74,6 +74,16 @@ I want to post a message (peep) to chitter
 
 **Test 5** - testing /POST => peep must have a valid date
 
+**Test 16** - should render a peep body input and label
+
+**Test 17** - should render a submit button
+
+**Test 18** - should render a new value in the input when the peepBody is updated
+
+**Test 19** - should enable the submit button when the peepBody is populated
+
+**Test 20** - submitPeep prop function is called when the submit button is clicked
+
 ---
 
 ## Part 2
@@ -161,7 +171,19 @@ I want to sign up for Chitter
 - Usernames and emails are unique
 - Use a database to store all the registered users
 
-### Domain Model 4
+### Components 4
+
+- Database
+
+  - User (username, first name, last name, email, password)
+
+- Register (backend)
+
+  - User model
+  - register route (post to database)
+
+- Register (frontend)
+  - Register component
 
 ### Tests 4
 
