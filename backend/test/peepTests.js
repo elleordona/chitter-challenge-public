@@ -13,7 +13,7 @@ const testDataArray = testData.peeps;
 
 chai.use(chaiHttp);
 
-describe('Testing requests on the database', () => {
+describe('Testing requests on the peeps database', () => {
 	// create server and keep it open so we can make requests during the testing
 	const testServer = chai.request(server).keepOpen();
 

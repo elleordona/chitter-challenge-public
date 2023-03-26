@@ -90,11 +90,11 @@ PeepForm Component Testing
 
 PeepSubmit Component Testing
 
-**Test 41** - should render PeepForm
+**Test 40** - should render PeepForm
 
-**Test 42** - should call mockSubmit when the form is submitted
+**Test 41** - should call mockSubmit when the form is submitted
 
-**Test 43** - should render 'redirected' when submitted is set to true
+**Test 42** - should render 'redirected' when submitted is set to true
 
 ---
 
@@ -193,7 +193,7 @@ I want to sign up for Chitter
 
 - Database
 
-  - User (username, first name, last name, email, password)
+  - User (username, email, name, password)
 
 - Register (backend)
 
@@ -215,37 +215,29 @@ Backend Testing
 
 **Test 24** - testing /POST => a user must have a username
 
-**Test 25** - testing /POST => a user must have a first name
+**Test 25** - testing /POST => a user must have a name
 
-**Test 27** - testing /POST => a user must have a last name
+Register Component Testing
 
-**Test 28** - testing /GET => get user information from \_id
+**Test 26** - should render a name label and input
 
-Login Component Testing
+**Test 30** - should render a username label and input
 
-**Test 29** - should render a first name label and input
+**Test 31** - should render an email label and input
 
-**Test 30** - should render a last name label and input
+**Test 32** - should render a password label and input
 
-**Test 31** - should render a username label and input
+**Test 34** - should render a new value in the input when the name is updated
 
-**Test 32** - should render an email label and input
+**Test 35** - should render a new value in the input when the username is updated
 
-**Test 33** - should render a password label and input
+**Test 36** - should render a new value in the input when the email is updated
 
-**Test 34** - should render a new value in the input when the first name is updated
+**Test 37** - should render a new value in the input when the password is updated
 
-**Test 35** - should render a new value in the input when the last name is updated
+**Test 38** - should enable the register button when all inputs are populated
 
-**Test 36** - should render a new value in the input when the username is updated
-
-**Test 37** - should render a new value in the input when the email is updated
-
-**Test 38** - should render a new value in the input when the password is updated
-
-**Test 39** - should enable the register button when all inputs are populated
-
-**Test 40** - registerUser prop function is called when the register button is clicked
+**Test 39** - registerUser prop function is called when the register button is clicked
 
 ---
 

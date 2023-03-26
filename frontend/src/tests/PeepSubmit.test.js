@@ -43,7 +43,7 @@ describe('PeepSubmit Tests', () => {
 			render(<RouterProvider router={router} />);
 		});
 
-		//* Test 41
+		//* Test 40
 		test('should render PeepForm', () => {
 			// Arrange
 			const form = document.querySelector(`form`);
@@ -53,7 +53,7 @@ describe('PeepSubmit Tests', () => {
 			expect(form).toBeTruthy();
 		});
 
-		//* Test 42
+		//* Test 41
 		test('should call mockSubmit when the form is submitted', async () => {
 			// Arrange
 			const testPeepBody = `Test Peep`;
@@ -73,7 +73,7 @@ describe('PeepSubmit Tests', () => {
 			expect(mockSubmit).toHaveBeenCalledWith(submittedPeep);
 		});
 
-		//* Test 43
+		//* Test 42
 		xtest('should render "redirected" when submitted is set to true', async () => {
 			// Arrange
 			const testPeepBody = `Test Peep`;

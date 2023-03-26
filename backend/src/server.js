@@ -5,6 +5,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import { config } from 'dotenv';
+import cookieParser from 'cookie-parser';
 
 // configure the use of environment variables
 config({ path: `.env.${process.env.NODE_ENV}` });
@@ -12,6 +13,7 @@ config({ path: `.env.${process.env.NODE_ENV}` });
 // route imports
 import { allPeeps } from './routes/allPeeps.route.js';
 import { addPeep } from './routes/addPeep.route.js';
+import authRoutes from './routes/auth.routes.js';
 
 // server setup
 const port = process.env.PORT;
@@ -29,8 +31,12 @@ main().catch((err) => console.log(err));
 
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
+
+// routes
 app.use(`/`, allPeeps);
 app.use(`/add`, addPeep);
+app.use(`/api/auth`, authRoutes);
 
 const server = app.listen(port, host, () => {
 	const SERVERHOST = server.address().address;
