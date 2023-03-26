@@ -14,7 +14,7 @@ const ComposePeep = ({ submitAction, peep }) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		submitAction(peep?._id, username, peepBody, date);
+		submitAction(username, peepBody, date, peep?._id);
 		setUsername(``);
 		setPeepBody(``);
 		setDate(null);
@@ -27,7 +27,7 @@ const ComposePeep = ({ submitAction, peep }) => {
 				<input type="text" name="peepBody" placeholder="What's Happening?" className="form-control" value={peepBody} onChange={(event) => setPeepBody(event.target.value)} />
 			</div>
 			<div className="form-group">
-				<label htmlFor="date">Date: {<DateCreated updateDateCreated={(dateCreated) => setDate(dateCreated)} />}</label>
+				<label title="date">Date: {<DateCreated updateDateCreated={(dateCreated) => setDate(dateCreated)} />}</label>
 			</div>
 			<div className="form-group">
 				<input type="submit" value="Submit" className={`btn ${!peepBody ? `btn-danger` : `btn-primary`}`} disabled={!peepBody} />

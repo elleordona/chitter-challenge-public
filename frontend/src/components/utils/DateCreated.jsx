@@ -3,7 +3,7 @@
 // imports
 import { useEffect, useState } from 'react';
 
-const DateCreated = ({ dateCreated }) => {
+const DateCreated = ({ updateDateCreated, dateCreated }) => {
 	// set date to state
 	const [date, setDate] = useState(dateCreated);
 
@@ -14,6 +14,10 @@ const DateCreated = ({ dateCreated }) => {
 
 		return () => clearInterval(interval);
 	});
+
+	useEffect(() => {
+		updateDateCreated(date);
+	}, [updateDateCreated, date]);
 
 	return <span data-testid="dateCreated">{`${date.toLocaleDateString()} @ ${date.toLocaleTimeString()}`}</span>;
 };

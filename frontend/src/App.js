@@ -11,8 +11,8 @@ import { getPeeps, submitPeep } from './asyncFunctions/peepAPICalls.js';
 // components
 import Sidebar from './components/Sidebar/Sidebar.jsx';
 import Feed from './components/Feed/Feed.jsx';
-import ComposePeep from './components/ComposePeep/ComposePeep.jsx';
 import Alert from './components/utils/Alert.jsx';
+import PeepForm from './components/PeepForm/PeepForm.jsx';
 
 function App() {
 	// set variables to state
@@ -62,7 +62,7 @@ function App() {
 			<div className="main">
 				<Routes>
 					<Route path="/" element={<Feed data={{ peeps, error: error.message }} />} />
-					<Route path="/add" element={<ComposePeep submitAction={submitPeepHandler} />} />
+					<Route path="/add" element={<PeepForm submitAction={submitPeepHandler} />} />
 				</Routes>
 			</div>
 		</div>
