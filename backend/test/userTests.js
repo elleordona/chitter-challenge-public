@@ -49,9 +49,24 @@ describe('Testing requests on the user database', () => {
 
 			const res = await testServer.post(`/api/auth/register`).send(user);
 
-			expect(res).to.have.status(200);
+			expect(res).to.have.status(201);
 			expect(res.body).to.have.an(`object`);
 			expect(res.body).to.have.property(`username`, user.username);
+		});
+
+		//* Test 22
+		it('should not create a user without an email', async () => {
+			let user = {
+				name: `name`,
+				username: `username`,
+				password: `password`,
+			};
+
+			const res = await testServer.post(`/api/auth/register`).send(user);
+
+			expect(res).to.have.status(422);
+			expect(res.body).to.have.an(`object`);
+			expect(res.text).to.be.eql(`You have missing fields`);
 		});
 	});
 });

@@ -217,6 +217,10 @@ Backend Testing
 
 **Test 25** - testing /POST => a user must have a name
 
+**Test 26** - testing /POST => the username must be unique
+
+**Test 27** - testing /POST => the email must be unique
+
 Register Component Testing
 
 **Test 26** - should render a name label and input

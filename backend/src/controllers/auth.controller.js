@@ -4,13 +4,17 @@
 import User from '../models/user.model.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { handleError } from '../middlewares/error.js';
+import { validationResult } from 'express-validator';
 
 export const register = async (req, res, next) => {
 	try {
-		const { email, username, password } = req.body;
+		const errors = validationResult(req);
+		if (!errors.isEmpty()) {
+			return res.status(422).send(`You have missing fields`);
+		}
 
 		// check if the entered email exists
+		const { email, username, password } = req.body;
 		const existingEmail = await User.findOne({ email });
 
 		if (existingEmail) {
@@ -43,7 +47,7 @@ export const register = async (req, res, next) => {
 			.cookie('access_token', token, {
 				httpOnly: true,
 			})
-			.status(200)
+			.status(201)
 			.json(othersData);
 	} catch (err) {
 		next(err);
