@@ -73,9 +73,9 @@ describe('ComposePeep tests', () => {
 
 	describe('ComposePeep submission tests', () => {
 		//* Test 20
-		xtest('should call the submitPeep prop function when the submit button is clicked', () => {
+		test('should call the submitPeep prop function when the submit button is clicked', () => {
 			// Arrange
-			render(/* add the ComposePeep component */);
+			render(<ComposePeep submitAction={mockSubmitAction} peep={testPeep} />);
 			const testPeepBody = `Test Peep`;
 			const peepInput = screen.getByPlaceholderText(/what's happening?/i);
 			const submitBtn = screen.getByDisplayValue(/submit/i);
@@ -86,7 +86,7 @@ describe('ComposePeep tests', () => {
 
 			// Assert
 			expect(mockSubmitAction).toHaveBeenCalledTimes(1);
-			expect(mockSubmitAction).toHaveBeenCalledWith(undefined, undefined, testPeepBody, null);
+			expect(mockSubmitAction).toHaveBeenCalledWith(undefined, '', testPeepBody, null);
 		});
 	});
 });

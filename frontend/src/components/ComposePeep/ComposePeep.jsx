@@ -7,7 +7,7 @@ import DateCreated from '../utils/DateCreated';
 
 const ComposePeep = ({ submitAction, peep }) => {
 	// set variables to state
-	const [username, setUsername] = useState(`peepuser`);
+	const [username, setUsername] = useState(``);
 	const [peepBody, setPeepBody] = useState(``);
 	const [date, setDate] = useState(null);
 
@@ -15,7 +15,7 @@ const ComposePeep = ({ submitAction, peep }) => {
 		event.preventDefault();
 
 		submitAction(peep?._id, username, peepBody, date);
-		setUsername(`peepuser`);
+		setUsername(``);
 		setPeepBody(``);
 		setDate(null);
 	};
