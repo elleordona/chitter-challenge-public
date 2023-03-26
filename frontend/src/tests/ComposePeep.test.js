@@ -40,9 +40,9 @@ describe('ComposePeep tests', () => {
 
 	describe('ComposePeep manipulation tests', () => {
 		//* Test 18
-		xtest('should render the new value in the input when the peepBody is updated', () => {
+		test('should render the new value in the input when the peepBody is updated', () => {
 			// Arrange
-			render(/* add the ComposePeep component */);
+			render(<ComposePeep submitAction={mockSubmitAction} peep={testPeep} />);
 			const testPeepBody = `Test Peep`;
 			const peepInput = screen.getByPlaceholderText(/what's happening?/i);
 
