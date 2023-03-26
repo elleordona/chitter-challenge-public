@@ -64,6 +64,8 @@ I want to post a message (peep) to chitter
 
 ### Testing 1
 
+Backend Testing
+
 **Test 1** - testing /GET => get all peeps
 
 **Test 2** - testing /POST => peep is created when properly formed
@@ -74,6 +76,8 @@ I want to post a message (peep) to chitter
 
 **Test 5** - testing /POST => peep must have a valid date
 
+PeepForm Component Testing
+
 **Test 16** - should render a peep body input and label
 
 **Test 17** - should render a submit button
@@ -83,6 +87,14 @@ I want to post a message (peep) to chitter
 **Test 19** - should enable the submit button when the peepBody is populated
 
 **Test 20** - submitPeep prop function is called when the submit button is clicked
+
+PeepSubmit Component Testing
+
+**Test 41** - should render PeepForm
+
+**Test 42** - should call mockSubmit when the form is submitted
+
+**Test 43** - should render 'redirected' when submitted is set to true
 
 ---
 
@@ -114,7 +126,11 @@ I want to see all peeps in reverse chronological order
 
 ### Tests 2
 
+Sidebar Component Testing
+
 **Test 6** - Sidebar matches snapshot
+
+Feed Component Testing
 
 **Test 7** - Should render "Peeps Loading" on initial render
 
@@ -151,6 +167,8 @@ I want to see the time at which it was made
 
 ### Tests 3
 
+Feed Component Testing
+
 **Test 15** - the Date is rendered when the Feed is rendered
 
 ---
@@ -186,6 +204,48 @@ I want to sign up for Chitter
   - Register component
 
 ### Tests 4
+
+Backend Testing
+
+**Test 21** - testing /POST => a user is created when properly formed
+
+**Test 22** - testing /POST => a user must have an email
+
+**Test 23** - testing /POST => a user must have a password
+
+**Test 24** - testing /POST => a user must have a username
+
+**Test 25** - testing /POST => a user must have a first name
+
+**Test 27** - testing /POST => a user must have a last name
+
+**Test 28** - testing /GET => get user information from \_id
+
+Login Component Testing
+
+**Test 29** - should render a first name label and input
+
+**Test 30** - should render a last name label and input
+
+**Test 31** - should render a username label and input
+
+**Test 32** - should render an email label and input
+
+**Test 33** - should render a password label and input
+
+**Test 34** - should render a new value in the input when the first name is updated
+
+**Test 35** - should render a new value in the input when the last name is updated
+
+**Test 36** - should render a new value in the input when the username is updated
+
+**Test 37** - should render a new value in the input when the email is updated
+
+**Test 38** - should render a new value in the input when the password is updated
+
+**Test 39** - should enable the register button when all inputs are populated
+
+**Test 40** - registerUser prop function is called when the register button is clicked
 
 ---
 
