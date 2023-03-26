@@ -54,9 +54,9 @@ describe('ComposePeep tests', () => {
 		});
 
 		//* Test 19
-		xtest('should enable the submit button when the peepBody is populated', () => {
+		test('should enable the submit button when the peepBody is populated', () => {
 			// Arrange
-			render(/* add the ComposePeep component */);
+			render(<ComposePeep submitAction={mockSubmitAction} peep={testPeep} />);
 			const testPeepBody = `Test Peep`;
 			const peepInput = screen.getByPlaceholderText(/what's happening?/i);
 			const submitBtn = screen.getByDisplayValue(/submit/i);
