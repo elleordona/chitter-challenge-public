@@ -1,51 +1,49 @@
-// PeepForm Component
+// ComposePeep component
 
 // imports
-import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import DateCreated from '../utils/DateCreated';
 
-// components
-import ComposePeep from '../ComposePeep/ComposePeep.jsx';
-import PeepModel from '../utils/peep.model.js';
-import Alert from '../utils/Alert.jsx';
+const PeepForm = ({ submitAction, peep }) => {
+	// set variables to state
+	const [username, setUsername] = useState(``);
+	const [peepBody, setPeepBody] = useState(``);
+	const [date, setDate] = useState(null);
 
-const PeepForm = ({ submitAction }) => {
-	// set variable to state
-	const [peep, setPeep] = useState({});
-	const [submitted, setSubmitted] = useState(false);
+	const handleSubmit = (event) => {
+		event.preventDefault();
 
-	const navigate = useNavigate();
-	const { _id } = useParams();
-
-	useEffect(() => {
-		if (submitted) navigate('/');
-	}, [submitted, navigate]);
-
-	const submitPeep = (username, peepBody, date) => {
-		const peepToSubmit = new PeepModel(username, peepBody, new Date(date).toISOString(), _id);
-		submitAction(peepToSubmit);
-		setSubmitted(true);
+		submitAction(username, peepBody, date, peep?._id);
+		setUsername(``);
+		setPeepBody(``);
+		setDate(null);
 	};
 
 	return (
-		<>
-			{peep?.error && <Alert handleClose={() => setPeep({})} message={peep.error} />}
-			<ComposePeep submitAction={submitPeep} peep={peep?.error ? {} : peep} />
-		</>
+		<form onSubmit={handleSubmit} className="w-75 text-center mx-auto">
+			<div className="form-group">
+				<label htmlFor="peepBody">Write your Peep here:</label>
+				<input type="text" name="peepBody" placeholder="What's Happening?" className="form-control" value={peepBody} onChange={(event) => setPeepBody(event.target.value)} />
+			</div>
+			<div className="form-group">
+				<label title="date">Date: {<DateCreated updateDateCreated={(dateCreated) => setDate(dateCreated)} />}</label>
+			</div>
+			<div className="form-group">
+				<input type="submit" value="Submit" className={`btn ${!peepBody ? `btn-danger` : `btn-primary`}`} disabled={!peepBody} />
+			</div>
+		</form>
 	);
 };
 
 PeepForm.propTypes = {
 	submitAction: PropTypes.func.isRequired,
-	peeps: PropTypes.arrayOf(
-		PropTypes.exact({
-			_id: PropTypes.string,
-			username: PropTypes.string,
-			peepBody: PropTypes.string,
-			date: PropTypes.string,
-		})
-	),
+	peep: PropTypes.shape({
+		_id: PropTypes.string,
+		username: PropTypes.string,
+		peepBody: PropTypes.string,
+		date: PropTypes.string,
+	}),
 };
 
 export default PeepForm;

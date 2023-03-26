@@ -1,9 +1,9 @@
-// testing for ComposePeep component
+// testing for PeepForm component
 
 // imports
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import ComposePeep from '../components/ComposePeep/ComposePeep.jsx';
+import PeepForm from '../components/PeepForm/PeepForm.jsx';
 
 // mock implementation for DateCreated component
 jest.mock('../components/utils/DateCreated.jsx', () => {
@@ -21,7 +21,7 @@ describe('ComposePeep tests', () => {
 		test('should render a peep input and label', () => {
 			// Arrange
 			// Act
-			render(<ComposePeep submitAction={mockSubmitAction} peep={testPeep} />);
+			render(<PeepForm submitAction={mockSubmitAction} peep={testPeep} />);
 
 			// Assert
 			expect(screen.getByPlaceholderText(/what's happening?/i)).toBeInTheDocument();
@@ -31,7 +31,7 @@ describe('ComposePeep tests', () => {
 		test('should render a submit button', () => {
 			// Arrange
 			// Act
-			render(<ComposePeep submitAction={mockSubmitAction} peep={testPeep} />);
+			render(<PeepForm submitAction={mockSubmitAction} peep={testPeep} />);
 
 			// Assert
 			expect(screen.getByText(`Submit`)).toBeInTheDocument();
@@ -42,7 +42,7 @@ describe('ComposePeep tests', () => {
 		//* Test 18
 		test('should render the new value in the input when the peepBody is updated', () => {
 			// Arrange
-			render(<ComposePeep submitAction={mockSubmitAction} peep={testPeep} />);
+			render(<PeepForm submitAction={mockSubmitAction} peep={testPeep} />);
 			const testPeepBody = `Test Peep`;
 			const peepInput = screen.getByPlaceholderText(/what's happening?/i);
 
@@ -56,7 +56,7 @@ describe('ComposePeep tests', () => {
 		//* Test 19
 		test('should enable the submit button when the peepBody is populated', () => {
 			// Arrange
-			render(<ComposePeep submitAction={mockSubmitAction} peep={testPeep} />);
+			render(<PeepForm submitAction={mockSubmitAction} peep={testPeep} />);
 			const testPeepBody = `Test Peep`;
 			const peepInput = screen.getByPlaceholderText(/what's happening?/i);
 			const submitBtn = screen.getByDisplayValue(/submit/i);
@@ -75,7 +75,7 @@ describe('ComposePeep tests', () => {
 		//* Test 20
 		test('should call the submitPeep prop function when the submit button is clicked', () => {
 			// Arrange
-			render(<ComposePeep submitAction={mockSubmitAction} peep={testPeep} />);
+			render(<PeepForm submitAction={mockSubmitAction} peep={testPeep} />);
 			const testPeepBody = `Test Peep`;
 			const peepInput = screen.getByPlaceholderText(/what's happening?/i);
 			const submitBtn = screen.getByDisplayValue(/submit/i);
@@ -86,7 +86,7 @@ describe('ComposePeep tests', () => {
 
 			// Assert
 			expect(mockSubmitAction).toHaveBeenCalledTimes(1);
-			expect(mockSubmitAction).toHaveBeenCalledWith(undefined, '', testPeepBody, null);
+			expect(mockSubmitAction).toHaveBeenCalledWith('', 'Test Peep', null, undefined);
 		});
 	});
 });
