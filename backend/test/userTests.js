@@ -68,5 +68,50 @@ describe('Testing requests on the user database', () => {
 			expect(res.body).to.have.an(`object`);
 			expect(res.text).to.be.eql(`You have missing fields`);
 		});
+
+		//* Test 23
+		it('should not create a user without a password', async () => {
+			let user = {
+				name: `name`,
+				username: `username`,
+				email: `email@email.com`,
+			};
+
+			const res = await testServer.post(`/api/auth/register`).send(user);
+
+			expect(res).to.have.status(422);
+			expect(res.body).to.have.an(`object`);
+			expect(res.text).to.be.eql(`You have missing fields`);
+		});
+
+		//* Test 24
+		it('should not create a user without a username', async () => {
+			let user = {
+				name: `name`,
+				email: `email@email.com`,
+				password: `password`,
+			};
+
+			const res = await testServer.post(`/api/auth/register`).send(user);
+
+			expect(res).to.have.status(422);
+			expect(res.body).to.have.an(`object`);
+			expect(res.text).to.be.eql(`You have missing fields`);
+		});
+
+		//* Test 25
+		it('should not create a user without a name', async () => {
+			let user = {
+				username: `username`,
+				email: `email@email.com`,
+				password: `password`,
+			};
+
+			const res = await testServer.post(`/api/auth/register`).send(user);
+
+			expect(res).to.have.status(422);
+			expect(res.body).to.have.an(`object`);
+			expect(res.text).to.be.eql(`You have missing fields`);
+		});
 	});
 });
