@@ -72,5 +72,26 @@ describe('PeepSubmit Tests', () => {
 			expect(mockSubmit).toHaveBeenCalledTimes(1);
 			expect(mockSubmit).toHaveBeenCalledWith(submittedPeep);
 		});
+
+		//* Test 43
+		xtest('should render "redirected" when submitted is set to true', async () => {
+			// Arrange
+			const testPeepBody = `Test Peep`;
+			// const submittedPeep = { username: ``, peepBody: testPeepBody, date: `1970-01-01T00:00:00.000Z`, _id: null };
+
+			const peepInput = screen.getByPlaceholderText(/what's happening/i);
+
+			userEvent.clear(peepInput);
+			userEvent.type(peepInput, testPeepBody);
+
+			// Act
+			const submitBtn = await screen.getByRole(/button/i);
+
+			userEvent.click(submitBtn);
+
+			// Assert
+			const redirectParagraph = await screen.getByText(/redirected/i);
+			expect(redirectParagraph).toBeInTheDocument();
+		});
 	});
 });
