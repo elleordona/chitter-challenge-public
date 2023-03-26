@@ -28,10 +28,10 @@ describe('ComposePeep tests', () => {
 		});
 
 		//* Test 17
-		xtest('should render a submit button', () => {
+		test('should render a submit button', () => {
 			// Arrange
 			// Act
-			render(/* add the ComposePeep component */);
+			render(<ComposePeep submitAction={mockSubmitAction} peep={testPeep} />);
 
 			// Assert
 			expect(screen.getByText(`Submit`)).toBeInTheDocument();
