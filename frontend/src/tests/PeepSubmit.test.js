@@ -52,5 +52,25 @@ describe('PeepSubmit Tests', () => {
 			// Assert
 			expect(form).toBeTruthy();
 		});
+
+		//* Test 42
+		test('should call mockSubmit when the form is submitted', async () => {
+			// Arrange
+			const testPeepBody = `Test Peep`;
+			const submittedPeep = { username: ``, peepBody: testPeepBody, date: `1970-01-01T00:00:00.000Z`, _id: null };
+			const peepInput = screen.getByPlaceholderText(/what's happening?/i);
+
+			// Act
+			userEvent.clear(peepInput);
+			userEvent.type(peepInput, testPeepBody);
+
+			const submitBtn = await screen.getByRole(/button/i);
+
+			userEvent.click(submitBtn);
+
+			// Assert
+			expect(mockSubmit).toHaveBeenCalledTimes(1);
+			expect(mockSubmit).toHaveBeenCalledWith(submittedPeep);
+		});
 	});
 });
