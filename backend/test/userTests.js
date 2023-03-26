@@ -137,5 +137,29 @@ describe('Testing requests on the user database', () => {
 			expect(res.body).to.have.an(`object`);
 			expect(res.text).to.be.eql('{"message":"Username is already in use"}');
 		});
+
+		//* Test 27
+		it('should not create a user with a username that already exists', async () => {
+			let user1 = {
+				name: `name`,
+				username: `username1`,
+				email: `email@email.com`,
+				password: `password`,
+			};
+
+			let user2 = {
+				name: `name`,
+				username: `username2`,
+				email: `email@email.com`,
+				password: `password`,
+			};
+
+			await testServer.post(`/api/auth/register`).send(user1);
+			const res = await testServer.post(`/api/auth/register`).send(user2);
+
+			expect(res).to.have.status(400);
+			expect(res.body).to.have.an(`object`);
+			expect(res.text).to.be.eql('{"message":"Email is already in use"}');
+		});
 	});
 });
