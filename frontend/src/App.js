@@ -23,7 +23,7 @@ function App() {
 	const [peeps, setPeeps] = useState([]);
 	const [error, setError] = useState({ type: ``, message: `` });
 	const [createUpdateStatus, setCreateUpdateStatus] = useState(``);
-	const [user, setUser] = useState({});
+	const [setUser] = useState({});
 
 	// handle errors when getting data from database
 	const getPeepsHandler = async () => {
@@ -74,7 +74,7 @@ function App() {
 					<Route path="/add" element={<PeepSubmit submitAction={submitPeepHandler} />} />
 					<Route path="/api/auth/register" element={<Register />} />
 					<Route path="/api/auth/login" element={<Login setUser={setUser} />} />
-					<Route path="/profile" element={<Profile setUser={setUser} />} />
+					<Route path="/profile" element={<Profile logOut={logOut} />} />
 				</Routes>
 			</div>
 		</div>

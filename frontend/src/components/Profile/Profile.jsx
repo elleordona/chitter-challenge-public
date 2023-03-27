@@ -4,18 +4,21 @@
 
 import authService from '../utils/auth.service.js';
 
-const Profile = ({ setUser }) => {
+const Profile = ({ logOut }) => {
 	const currentUser = authService.getCurrentUser();
 
 	return (
 		<div className="container">
-			<>
-				<h2>Welcome to your profile, {currentUser.name}</h2>
-				<br />
-				<button onClick={() => setUser({})} className="btn btn-primary">
-					Log Out
-				</button>
-			</>
+			{!currentUser && <p>you are not logged in</p>}
+			{currentUser && (
+				<>
+					<h2>Welcome to your profile, {currentUser.name}</h2>
+					<br />
+					<button onClick={logOut} className="btn btn-primary">
+						Log Out
+					</button>
+				</>
+			)}
 		</div>
 	);
 };
