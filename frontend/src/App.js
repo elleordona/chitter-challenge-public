@@ -13,6 +13,7 @@ import Sidebar from './components/Sidebar/Sidebar.jsx';
 import Feed from './components/Feed/Feed.jsx';
 import Alert from './components/utils/Alert.jsx';
 import PeepSubmit from './components/PeepSubmit/PeepSubmit.jsx';
+import Register from './components/Register/Register.jsx';
 
 function App() {
 	// set variables to state
@@ -63,6 +64,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Feed data={{ peeps, error: error.message }} />} />
 					<Route path="/add" element={<PeepSubmit submitAction={submitPeepHandler} />} />
+					<Route path="/api/auth/register" element={<Register />} />
 				</Routes>
 			</div>
 		</div>
