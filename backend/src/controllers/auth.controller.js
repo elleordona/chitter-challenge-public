@@ -5,6 +5,7 @@ import User from '../models/user.model.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { validationResult } from 'express-validator';
+import { handleError } from '../middlewares/error.js';
 
 export const register = async (req, res, next) => {
 	try {
@@ -49,6 +50,27 @@ export const register = async (req, res, next) => {
 			})
 			.status(201)
 			.json(othersData);
+	} catch (err) {
+		next(err);
+	}
+};
+
+export const login = async (req, res, next) => {
+	try {
+		// check if the email exists
+		const user = await User.findOne({ email: req.body.email });
+
+		if (!user) return next(handleError(404, `User not Found`));
+
+		// check if the passwords match
+		const passwordMatch = await bcrypt.compare(req.body.password, user.password);
+
+		if (!passwordMatch) return next(handleError(404, `Incorrect Password`));
+
+		const token = jwt.sign({ id: user._id }, process.env.JWT);
+		const { password: userPassword, ...othersData } = user._doc;
+
+		res.cookie(`access_token`, token, { httpOnly: true }).status(200).json(othersData);
 	} catch (err) {
 		next(err);
 	}
