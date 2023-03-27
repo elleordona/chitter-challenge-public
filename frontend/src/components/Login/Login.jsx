@@ -1,6 +1,7 @@
 // Login Component
 
 // imports
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -8,42 +9,42 @@ import authService from '../utils/auth.service.js';
 
 const Login = ({ setUser: setLoginUser }) => {
 	// set variables to state
-	const [user, setUser] = useState({
-		email: ``,
-		password: ``,
-	});
-	const [loggedIn, setLoggedIn] = useState(false);
+	const [email, setEmail] = useState(``);
+	const [password, setPassword] = useState(``);
+	const [loading, setLoading] = useState(false);
+	const [message, setMessage] = useState(``);
 
 	const navigate = useNavigate();
 
-	useEffect(() => {
-		if (loggedIn) navigate('/');
-	}, [loggedIn, navigate]);
+	const onChangeEmail = (e) => {
+		const newEmail = e.target.value;
+		setEmail(newEmail);
+	};
 
-	const handleChange = (e) => {
-		const { name, value } = e.target;
-		setUser({
-			...user,
-			[name]: value,
-		});
+	const onChangePassword = (e) => {
+		const newPassword = e.target.value;
+		setPassword(newPassword);
 	};
 
 	const loginUser = async (e) => {
 		e.preventDefault();
-		const { email, password } = user;
-		const loggedInUser = authService.login(email, password);
-		alert(`You are logged in`);
-		setUser({ email: ``, password: `` });
-		setLoggedIn(loggedInUser ? true : false);
+		const login = await authService.login(email, password);
+		if (localStorage.getItem(`user`)) {
+			navigate(`/profile`);
+		} else {
+			console.dir(login);
+			setMessage(login.error);
+			setLoading(true);
+		}
 	};
 
 	return (
 		<div className="card w-50 mx-auto text-center justify-content-center p-4">
 			<h3>Log In to your Account</h3>
 			<form onSubmit={loginUser}>
-				<input type="email" name="email" id="email" value={user.email} onChange={handleChange} placeholder="Enter your Email" className="mb-2 form-control" />
+				<input type="email" name="email" id="email" value={email} onChange={onChangeEmail} placeholder="Enter your Email" className="mb-2 form-control" />
 				<br />
-				<input type="password" name="password" id="password" value={user.password} onChange={handleChange} placeholder="Enter you Password" className="mb-2 form-control" />
+				<input type="password" name="password" id="password" value={password} onChange={onChangePassword} placeholder="Enter you Password" className="mb-2 form-control" />
 				<br />
 				<button type="submit" className="btn btn-primary">
 					Login

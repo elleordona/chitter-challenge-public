@@ -34,7 +34,7 @@ const Register = () => {
 		e.preventDefault();
 		const { name, username, email, password } = user;
 		if (name && username && email && password) {
-			authService.register(name, username, email, password);
+			await authService.register(name, username, email, password);
 			setSubmitted(true);
 			alert(`User Registered Successfully`);
 			setUser({ name: ``, username: ``, email: ``, password: `` });

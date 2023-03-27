@@ -28,19 +28,29 @@ const login = async (email, password) => {
 			password,
 		});
 		const data = await response.data;
-
 		if (data.accessToken) {
 			localStorage.setItem(`user`, JSON.stringify(response.data));
 		}
+
 		return data;
 	} catch (error) {
-		return error;
+		return { error: error.response.data.message };
 	}
+};
+
+const logout = () => {
+	localStorage.removeItem(`user`);
+};
+
+const getCurrentUser = () => {
+	return JSON.parse(localStorage.getItem(`user`));
 };
 
 const authService = {
 	register,
 	login,
+	logout,
+	getCurrentUser,
 };
 
 export default authService;

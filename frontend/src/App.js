@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { getPeeps, submitPeep } from './asyncFunctions/peepAPICalls.js';
 
 // utils
+import authService from './components/utils/auth.service.js';
 
 // components
 import Sidebar from './components/Sidebar/Sidebar.jsx';
@@ -15,6 +16,7 @@ import Alert from './components/utils/Alert.jsx';
 import PeepSubmit from './components/PeepSubmit/PeepSubmit.jsx';
 import Register from './components/Register/Register.jsx';
 import Login from './components/Login/Login.jsx';
+import Profile from './components/Profile/Profile.jsx';
 
 function App() {
 	// set variables to state
@@ -55,6 +57,10 @@ function App() {
 		getPeepsHandler();
 	};
 
+	const logOut = () => {
+		authService.logout();
+	};
+
 	return (
 		<div className="App">
 			{error.type && <Alert handleClose={() => setError({ type: ``, message: `` })} message={error.message} />}
@@ -68,6 +74,7 @@ function App() {
 					<Route path="/add" element={<PeepSubmit submitAction={submitPeepHandler} />} />
 					<Route path="/api/auth/register" element={<Register />} />
 					<Route path="/api/auth/login" element={<Login setUser={setUser} />} />
+					<Route path="/profile" element={<Profile setUser={setUser} />} />
 				</Routes>
 			</div>
 		</div>
