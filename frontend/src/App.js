@@ -14,12 +14,14 @@ import Feed from './components/Feed/Feed.jsx';
 import Alert from './components/utils/Alert.jsx';
 import PeepSubmit from './components/PeepSubmit/PeepSubmit.jsx';
 import Register from './components/Register/Register.jsx';
+import Login from './components/Login/Login.jsx';
 
 function App() {
 	// set variables to state
 	const [peeps, setPeeps] = useState([]);
 	const [error, setError] = useState({ type: ``, message: `` });
 	const [createUpdateStatus, setCreateUpdateStatus] = useState(``);
+	const [user, setUser] = useState({});
 
 	// handle errors when getting data from database
 	const getPeepsHandler = async () => {
@@ -65,6 +67,7 @@ function App() {
 					<Route path="/" element={<Feed data={{ peeps, error: error.message }} />} />
 					<Route path="/add" element={<PeepSubmit submitAction={submitPeepHandler} />} />
 					<Route path="/api/auth/register" element={<Register />} />
+					<Route path="/api/auth/login" element={<Login setUser={setUser} />} />
 				</Routes>
 			</div>
 		</div>
