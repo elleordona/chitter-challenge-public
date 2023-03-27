@@ -137,7 +137,7 @@ Object {
                       activeclassname="activeClicked"
                       class=""
                       firstchild="1"
-                      href="/login"
+                      href="/api/auth/register"
                       popperarrow="0"
                     >
                       <li
@@ -313,7 +313,7 @@ Object {
                     activeclassname="activeClicked"
                     class=""
                     firstchild="1"
-                    href="/login"
+                    href="/api/auth/register"
                     popperarrow="0"
                   >
                     <li

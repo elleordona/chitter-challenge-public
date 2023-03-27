@@ -1,5 +1,9 @@
 # Chitter Challenge by Elle Ordoña
 
+## Info
+
+The app is functional but I didn't have time to fully test all the functionalities. I will personally carry them out after the hand in date though
+
 ## Technologies Used
 
 - MongoDB (database)
@@ -13,11 +17,25 @@
 - CDBReact (user interface styling)
 - bootstrap (user interface styling)
 - react-router-dom (react app routing)
-- axios/jest (frontend testing)
+- axios (front-backend connection)
+- jest (frontend testing)
+- bcrypt (encrypting password)
+- jsonwebtoken (creating tokens for logging in)
 
 ---
 
 ## How to Run
+
+To run app:
+
+1. run `npm install` in backend folder
+2. run `npm start` in backend folder
+3. run `npm install` in frontend folder
+4. run `npm start` in frontend folder
+
+To run tests:
+
+1. run `npm test` in backend/frontend folder
 
 ---
 

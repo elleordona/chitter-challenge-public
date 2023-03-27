@@ -1,7 +1,7 @@
 // Profile Component
 
 // imports
-
+import { Link } from 'react-router-dom';
 import authService from '../utils/auth.service.js';
 
 const Profile = ({ logOut }) => {
@@ -9,7 +9,12 @@ const Profile = ({ logOut }) => {
 
 	return (
 		<div className="container">
-			{!currentUser && <p>you are not logged in</p>}
+			{!currentUser && (
+				<>
+					<h3>You are not logged in</h3>
+					<Link to="/api/auth/login">Click here to Login</Link>
+				</>
+			)}
 			{currentUser && (
 				<>
 					<h2>Welcome to your profile, {currentUser.name}</h2>

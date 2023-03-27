@@ -1,8 +1,7 @@
 // Login Component
 
 // imports
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import authService from '../utils/auth.service.js';
@@ -11,8 +10,8 @@ const Login = ({ setUser: setLoginUser }) => {
 	// set variables to state
 	const [email, setEmail] = useState(``);
 	const [password, setPassword] = useState(``);
-	const [loading, setLoading] = useState(false);
-	const [message, setMessage] = useState(``);
+	const [setLoading] = useState(false);
+	const [setMessage] = useState(``);
 
 	const navigate = useNavigate();
 
