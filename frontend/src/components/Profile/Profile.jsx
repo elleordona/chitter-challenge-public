@@ -12,6 +12,7 @@ const Profile = ({ logOut }) => {
 			{!currentUser && (
 				<>
 					<h3>You are not logged in</h3>
+					<p>You cannot view a profile without being logged in</p>
 					<Link to="/api/auth/login">Click here to Login</Link>
 				</>
 			)}
