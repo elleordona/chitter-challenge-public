@@ -3,6 +3,7 @@
 // imports
 import { Link } from 'react-router-dom';
 import authService from '../utils/auth.service.js';
+import Button from 'react-bootstrap/Button';
 
 const Profile = ({ logOut }) => {
 	const currentUser = authService.getCurrentUser();
@@ -20,9 +21,14 @@ const Profile = ({ logOut }) => {
 				<>
 					<h2>Welcome to your profile, {currentUser.name}</h2>
 					<br />
-					<button onClick={logOut} className="btn btn-primary">
+					<p>Your Username: {currentUser.username}</p>
+					<p>Your email: {currentUser.email}</p>
+					{/* <button onClick={logOut} className="btn btn-primary">
 						Log Out
-					</button>
+					</button> */}
+					<Button variant="secondary" onClick={logOut}>
+						Log Out
+					</Button>
 				</>
 			)}
 		</div>

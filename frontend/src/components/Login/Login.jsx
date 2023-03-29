@@ -29,7 +29,8 @@ const Login = ({ setUser: setLoginUser }) => {
 		e.preventDefault();
 		const login = await authService.login(email, password);
 		if (localStorage.getItem(`user`)) {
-			navigate(`/profile`);
+			navigate(`/`);
+			window.location.reload(false);
 		} else {
 			console.dir(login);
 			setMessage(login.error);

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,7 +11,7 @@ import { getPeeps, submitPeep } from './asyncFunctions/peepAPICalls.js';
 import authService from './components/utils/auth.service.js';
 
 // components
-import Sidebar from './components/Sidebar/Sidebar.jsx';
+import AppNavbar from './components/Navbar/Navbar.jsx';
 import Feed from './components/Feed/Feed.jsx';
 import Alert from './components/utils/Alert.jsx';
 import PeepSubmit from './components/PeepSubmit/PeepSubmit.jsx';
@@ -25,6 +25,8 @@ function App() {
 	const [error, setError] = useState({ type: ``, message: `` });
 	const [createUpdateStatus, setCreateUpdateStatus] = useState(``);
 	const [setUser] = useState({});
+
+	const navigate = useNavigate();
 
 	// handle errors when getting data from database
 	const getPeepsHandler = async () => {
@@ -59,6 +61,7 @@ function App() {
 	};
 
 	const logOut = () => {
+		navigate(`/`);
 		authService.logout();
 	};
 
@@ -67,7 +70,7 @@ function App() {
 			{error.type && <Alert handleClose={() => setError({ type: ``, message: `` })} message={error.message} />}
 			{createUpdateStatus && <Alert handleClose={() => setCreateUpdateStatus(``)} message={createUpdateStatus} />}
 			<div className="sidenav">
-				<Sidebar />
+				<AppNavbar />
 			</div>
 			<div className="main">
 				<Routes>

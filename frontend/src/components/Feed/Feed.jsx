@@ -32,7 +32,7 @@ const Feed = ({ data }) => {
 				const date = peepDate.toLocaleDateString();
 				const time = peepDate.toLocaleTimeString();
 				return (
-					<li key={currentPeep._id} className="card text-center w-75 mx-auto">
+					<li key={currentPeep._id} className="card text-center w-50 mx-auto">
 						<p className="h5 card-title">{currentPeep.username}</p>
 						<p className="fs-6 card-subtitle text-muted" role="time">{`${date}	${time}`}</p>
 						<p className="fs-6 card-body">{currentPeep.peepBody}</p>
