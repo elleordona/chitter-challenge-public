@@ -30,7 +30,7 @@ const Feed = ({ data }) => {
 			const peepList = sortedPeeps.map((currentPeep) => {
 				const peepDate = new Date(currentPeep.date);
 				const date = peepDate.toLocaleDateString();
-				const time = peepDate.getHours() + ':' + peepDate.getMinutes();
+				const time = String(peepDate.getHours()).padStart(2, '0') + ':' + String(peepDate.getMinutes()).padStart(2, '0');
 				return (
 					<li key={currentPeep._id} className="card text-center w-50 mx-auto">
 						<p className="h5 card-title">{currentPeep.username}</p>
