@@ -19,7 +19,7 @@ const DateCreated = ({ updateDateCreated, dateCreated }) => {
 		updateDateCreated(date);
 	}, [updateDateCreated, date]);
 
-	return <span data-testid="dateCreated">{`${date.toLocaleDateString()} @ ${date.toLocaleTimeString()}`}</span>;
+	return <span data-testid="dateCreated">{`${date.toLocaleDateString()} @ ${date.getHours()}:${date.getMinutes()}`}</span>;
 };
 
 DateCreated.defaultProps = {
