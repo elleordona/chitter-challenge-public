@@ -9,15 +9,13 @@ import DateCreated from '../utils/DateCreated';
 
 const PeepForm = ({ submitAction, peep }) => {
 	// set variables to state
-	const [username, setUsername] = useState(``);
 	const [peepBody, setPeepBody] = useState(``);
 	const [date, setDate] = useState(null);
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		submitAction(username, peepBody, date, peep?._id);
-		setUsername(``);
+		submitAction(currentUser.username, peepBody, date, peep?._id);
 		setPeepBody(``);
 		setDate(null);
 	};
@@ -27,16 +25,18 @@ const PeepForm = ({ submitAction, peep }) => {
 	return (
 		<div className="container">
 			{currentUser && (
-				<form onSubmit={handleSubmit} className="w-75 text-center mx-auto">
+				<form onSubmit={handleSubmit} className="card w-75 text-center mx-auto p-4">
 					<div className="form-group">
-						<p>Hello {currentUser.username}</p>
+						<h5>Hello, {currentUser.username}</h5>
 					</div>
 					<div className="form-group">
 						<label htmlFor="peepBody">Write your Peep here:</label>
-						<input type="text" name="peepBody" placeholder="What's Happening?" className="form-control" value={peepBody} onChange={(event) => setPeepBody(event.target.value)} />
+						<input type="text" name="peepBody" placeholder="What's Happening?" className="form-control m-2" value={peepBody} onChange={(event) => setPeepBody(event.target.value)} />
 					</div>
 					<div className="form-group">
-						<label title="date">Date: {<DateCreated updateDateCreated={(dateCreated) => setDate(dateCreated)} />}</label>
+						<label title="date" className="m-2">
+							Date: {<DateCreated updateDateCreated={(dateCreated) => setDate(dateCreated)} />}
+						</label>
 					</div>
 					<div className="form-group">
 						<input type="submit" value="Submit" className={`btn ${!peepBody ? `btn-danger` : `btn-primary`}`} disabled={!peepBody} />

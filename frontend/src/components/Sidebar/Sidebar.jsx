@@ -2,43 +2,30 @@
 
 // imports
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { CDBSidebar, CDBSidebarContent, CDBSidebarFooter, CDBSidebarHeader, CDBSidebarMenu, CDBSidebarMenuItem } from 'cdbreact';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGear } from '@fortawesome/free-solid-svg-icons';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 const Sidebar = () => {
 	return (
-		<div style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}>
-			<CDBSidebar textColor="#fff" backgroundColor="#333">
-				<CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
-					<a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
-						Chitter
-					</a>
-				</CDBSidebarHeader>
-
-				<CDBSidebarContent className="sidebar-content">
-					<CDBSidebarMenu>
-						<NavLink to="/" activeclassname="activeClicked">
-							<CDBSidebarMenuItem icon="home">Home</CDBSidebarMenuItem>
-						</NavLink>
-						<NavLink to="/add" activeclassname="activeClicked">
-							<CDBSidebarMenuItem icon="pen">Compose Peep</CDBSidebarMenuItem>
-						</NavLink>
-						<NavLink to="/profile" activeclassname="activeClicked">
-							<CDBSidebarMenuItem icon="user">Profile</CDBSidebarMenuItem>
-						</NavLink>
-						<NavLink to="/api/auth/register" activeclassname="activeClicked">
-							<CDBSidebarMenuItem icon="book">Login/Register</CDBSidebarMenuItem>
-						</NavLink>
-					</CDBSidebarMenu>
-				</CDBSidebarContent>
-
-				<CDBSidebarFooter style={{ textAlign: 'center' }}>
-					<div className="sidebar-btn-wrapper" style={{ padding: '20px 5px' }}>
-						Digital Futures Academy
-					</div>
-				</CDBSidebarFooter>
-			</CDBSidebar>
-		</div>
+		<Navbar bg="dark" variant="dark" expand="lg" fixed="top">
+			<Container>
+				<Navbar.Brand href="/">
+					<FontAwesomeIcon icon={faGear} /> Chitter
+				</Navbar.Brand>
+				<Navbar.Toggle aria-controls="basic-navbar-nav" />
+				<Navbar.Collapse id="basic-navbar-nav">
+					<Nav className="me-auto">
+						<Nav.Link href="/">Home</Nav.Link>
+						<Nav.Link href="/add">Compose Peep</Nav.Link>
+						<Nav.Link href="/profile">Profile</Nav.Link>
+						<Nav.Link href="/api/auth/register">Login/Register</Nav.Link>
+					</Nav>
+				</Navbar.Collapse>
+			</Container>
+		</Navbar>
 	);
 };
 
