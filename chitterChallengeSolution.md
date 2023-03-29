@@ -14,7 +14,7 @@ The app is functional but I didn't have time to fully test all the functionaliti
 - dotenv (environment variables)
 - mocha/chai/chai-http (backend testing)
 - React.js (user interface)
-- CDBReact (user interface styling)
+- react-bootstrap (user interface styling)
 - bootstrap (user interface styling)
 - react-router-dom (react app routing)
 - axios (front-backend connection)

@@ -6,11 +6,11 @@ import PropTypes from 'prop-types';
 import { useParams, useNavigate } from 'react-router-dom';
 
 // components
-import ComposePeep from '../PeepForm/PeepForm.jsx';
+import PeepForm from '../PeepForm/PeepForm.jsx';
 import PeepModel from '../utils/peep.model.js';
 import Alert from '../utils/Alert.jsx';
 
-const PeepSubmit = ({ submitAction }) => {
+const PeepSubmit = ({ submitAction, currentUser }) => {
 	// set variable to state
 	const [peep, setPeep] = useState({});
 	const [submitted, setSubmitted] = useState(false);
@@ -22,8 +22,9 @@ const PeepSubmit = ({ submitAction }) => {
 		if (submitted) navigate('/');
 	}, [submitted, navigate]);
 
-	const submitPeep = (username, peepBody, date) => {
-		const peepToSubmit = new PeepModel(username, peepBody, new Date(date).toISOString(), _id);
+	const submitPeep = (peepBody, date) => {
+		const peepToSubmit = new PeepModel(currentUser.username, peepBody, new Date(date).toISOString(), _id);
+		console.log(peepToSubmit);
 		submitAction(peepToSubmit);
 		setSubmitted(true);
 	};
@@ -31,7 +32,7 @@ const PeepSubmit = ({ submitAction }) => {
 	return (
 		<>
 			{peep?.error && <Alert handleClose={() => setPeep({})} message={peep.error} />}
-			<ComposePeep submitAction={submitPeep} peep={peep?.error ? {} : peep} />
+			<PeepForm submitAction={submitPeep} peep={peep?.error ? {} : peep} currentUser={currentUser} />
 		</>
 	);
 };

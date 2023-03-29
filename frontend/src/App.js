@@ -65,6 +65,8 @@ function App() {
 		authService.logout();
 	};
 
+	const currentUser = authService.getCurrentUser();
+
 	return (
 		<div className="App">
 			{error.type && <Alert handleClose={() => setError({ type: ``, message: `` })} message={error.message} />}
@@ -75,10 +77,10 @@ function App() {
 			<div className="main">
 				<Routes>
 					<Route path="/" element={<Feed data={{ peeps, error: error.message }} />} />
-					<Route path="/add" element={<PeepSubmit submitAction={submitPeepHandler} />} />
+					<Route path="/add" element={<PeepSubmit submitAction={submitPeepHandler} currentUser={currentUser} />} />
 					<Route path="/api/auth/register" element={<Register />} />
 					<Route path="/api/auth/login" element={<Login setUser={setUser} />} />
-					<Route path="/profile" element={<Profile logOut={logOut} />} />
+					<Route path="/profile" element={<Profile logOut={logOut} currentUser={currentUser} />} />
 				</Routes>
 			</div>
 		</div>
