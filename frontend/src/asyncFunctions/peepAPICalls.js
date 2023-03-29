@@ -22,7 +22,6 @@ export const getPeeps = async () => {
 
 export const submitPeep = async (peep) => {
 	try {
-		console.log(peep);
 		const res = await axios.post(`${process.env.REACT_APP_CHITTERURL}add`, peep);
 		return { peep: res.data, status: res.status };
 	} catch (e) {

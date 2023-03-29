@@ -24,7 +24,6 @@ const PeepSubmit = ({ submitAction, currentUser }) => {
 
 	const submitPeep = (peepBody, date) => {
 		const peepToSubmit = new PeepModel(currentUser.username, peepBody, new Date(date).toISOString(), _id);
-		console.log(peepToSubmit);
 		submitAction(peepToSubmit);
 		setSubmitted(true);
 	};
