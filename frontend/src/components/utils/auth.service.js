@@ -3,7 +3,7 @@
 // imports
 import axios from 'axios';
 
-const API_URL = `${process.env.REACT_APP_CHITTERURL}api/auth`;
+const API_URL = `${process.env.REACT_APP_CHITTERURL}/api/auth`;
 
 const register = async (name, username, email, password) => {
 	try {
