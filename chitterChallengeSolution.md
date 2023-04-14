@@ -1,9 +1,5 @@
 # Chitter Challenge by Elle Ordoña
 
-## Info
-
-The app is functional but I didn't have time to fully test all the functionalities. I will personally carry them out after the hand in date though
-
 ## Technologies Used
 
 - MongoDB (database)
