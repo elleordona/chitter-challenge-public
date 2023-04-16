@@ -14,14 +14,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/elleordona/chitter-challenge.git"
+		"url": "git+https://github.com/elleordona/chitter-challenge-public.git"
 	},
 	"author": "Elle Ordoña",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/elleordona/chitter-challenge/issues"
+		"url": "https://github.com/elleordona/chitter-challenge-public/issues"
 	},
-	"homepage": "https://github.com/elleordona/chitter-challenge#readme",
+	"homepage": "https://github.com/elleordona/chitter-challenge-public#readme",
 	"dependencies": {
 		"bcrypt": "^5.1.0",
 		"cookie-parser": "^1.4.6",
